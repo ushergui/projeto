@@ -13,3 +13,8 @@ def cadastrar_estado(request, template_name='estado/estado_form.html'):
         form.save()
         return redirect('listar_estado')
     return render(request, template_name, {'form': form})
+
+def listar_estado(request, template_name='estado/listar_estado.html'):
+    estado = Estado.objects.all()
+    estados = {'lista': estado}
+    return render(request, template_name, estados)

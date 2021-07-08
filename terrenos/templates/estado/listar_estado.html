@@ -15,13 +15,15 @@ Listagem de Estados
     <tr>
       <th>Nome</th>
       <th>Sigla</th>
+      <th>Editar</th>
+      <th>Excluir</th>
     </tr>
     </thead>
     <tbody>
     {% for estado in lista %}
     <tr>
         <td>{{ estado.nome_estado }}</td>
-        <td>{{ estado.sigla_estado }}</td>
+        <td>{{ estado.abreviatura_estado }}</td>
         <td>
         <a href="#">
           <span class="glyphicon glyphicon-pencil"></span>
