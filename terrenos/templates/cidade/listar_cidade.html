@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Cidades
+{% endblock title %}
+
+{% block tituloPagina %}
+Listagem de Cidades
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome da cidade</th>
+      <th>Estado</th>
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cidade in lista %}
+    <!-- Criei um "for" para rodar com os dados que veio do sistema e apresentar em cada linha um novo registro -->
+    <tr>
+        <td>{{ cidade.nome_cidade }}</td>
+        <td>{{ cidade.estado }}</td>
+        <td>
+        <a href="{% url 'editar_cidade' pk=cidade.pk %}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        </td>
+        <td>
+        <a href="{% url 'excluir_cidade' pk=cidade.pk %}">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+<a href="{% url 'cadastrar_cidade' %}">
+<button type="submit" class="btn btn-primary">
+    Cadastrar
+</button>
+</a>
+{% endblock content %}

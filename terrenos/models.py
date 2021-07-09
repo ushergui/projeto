@@ -9,3 +9,10 @@ class Estado(models.Model):
 
     def __str__(self):
         return self.nome_estado
+
+class Cidade(models.Model):
+    nome_cidade = models.CharField(max_length=40, null=False)
+    estado = models.ForeignKey('Estado', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome_cidade
