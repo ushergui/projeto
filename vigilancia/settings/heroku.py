@@ -2,7 +2,7 @@
 import environ
 
 #Importar os arquivos do arquivo base.py
-from vigilancia.vigilancia.settings.base import *
+from vigilancia.settings.base import *
 
 #Criando uma instância da classe env
 env = environ.Env()
